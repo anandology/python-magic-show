@@ -1,6 +1,6 @@
 # Python Magic Show
 
-> **magic |ˈmadʒɪk|**
+> **magic |ˈmadʒɪk|**<br>
 > noun [ mass noun ]
 >
 > the use of special powers to make things happen that would usually be impossible.
@@ -22,7 +22,7 @@
 01
 ```
 
-See `rprint/rprint.py`
+See `rprint.py`.
 
 ## What will be the output of this program?
 
@@ -33,6 +33,25 @@ See `rprint/rprint.py`
 >>> x = 10
 >>> print(y)
 11
-``` 
+```
 
-See `lazypy/lazy.py`
+See `lazy.py`.
+
+## Fun with Infinite Sequences!
+
+```
+>>> one = 1
+>>> ones = one >> ones
+>>> take(10, ones)
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+>>>
+>>> numbers = one >> (ones + numbers)
+>>> take(10, numbers)
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>>
+>>> fibs = one >> (one >> (fibs + tail(fibs)))
+>>> take(10, fibs)
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+```
+
+Try with `lazy.py`.
